@@ -1,0 +1,22 @@
+{
+  "name": "voice_modality",
+  "version": "1.0.0",
+  "description": "Prompt to voice",
+  "main": "prompt_to_voice.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "XY-coRP"
+  },
+  "author": "lamaranelson",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "langchain": "^0.0.131",
+    "openai": "^4.0.1",
+    "promises": "^0.2.5"
+  }
+}
