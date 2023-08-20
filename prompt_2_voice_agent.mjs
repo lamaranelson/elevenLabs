@@ -15,8 +15,7 @@ async function gptCompletion(topic) {
         modelName: process.env.OPENAI_CHAT_MODEL,
     });
     const response = await chat.call([
-        new SystemMessage(
-            `You are an assistant that helps complete user prompts so that we can transform the completed piece into speech with a third party API.\nThe user has asked you to complete the following prompt:\n\n${topic}\nResponse:`)
+        new SystemMessage(`You are an assistant that helps complete user prompts so that we can transform the completed piece into speech with a third party API.\nThe user has asked you to complete the following prompt:\n\n${topic}\nResponse:`)
     ]);        
         return response.content;
 }
@@ -42,8 +41,7 @@ async function getBestMatchVoiceId(inputPrompt, chatModel) {
     const formattedData = `${voice.link} ==> ${voice.snippet}`;
     oper_obj[useCase] = formattedData;
 
-    const formattedPrompt = `
-      You specialize in matching user prompts with voice IDs based on the voice's labels, specifically their use case and description. When given a user prompt and the use case and description of a voice, determine how well they match and provide a score. A higher score indicates a better match.\nUser Prompt: ${inputPrompt}\nVoice Use Case: ${useCase}\nVoice Description: ${description}\n\nScore:`;
+    const formattedPrompt = `You specialize in matching user prompts with voice IDs based on the voice's labels, specifically their use case and description. When given a user prompt and the use case and description of a voice, determine how well they match and provide a score. A higher score indicates a better match.\nUser Prompt: ${inputPrompt}\nVoice Use Case: ${useCase}\nVoice Description: ${description}\n\nScore:`;
 
     const systemMessage = new SystemMessage("You are a helpful assistant.");
     const humanMessage = new SystemMessage(formattedPrompt);
