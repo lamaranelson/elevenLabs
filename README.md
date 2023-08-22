@@ -1,6 +1,6 @@
 # Voice Modality with Eleven Labs
 
-This is a voice generation script powered by the Eleven Labs API. It uses user input and transforms it into speech using a two-step process. First, the user input is cleaned using a GPT model. Then, the cleaned prompt is sent to Eleven Labs.
+This is a voice generation script powered by the Eleven Labs API. It takes user input and transforms it into speech using a two-step process. First, the user input is cleaned using a GPT model. Then, the cleaned prompt is sent to Eleven Labs.
 
 ## Features
 
