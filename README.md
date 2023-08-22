@@ -4,7 +4,7 @@ This project is a voice modality application powered by Eleven Labs. It uses use
 
 ## Features
 
-- **GPT Cleaning**: The application uses a GPT model to clean the user input before sending it to Eleven Labs.
+- **GPT Cleaning**: The application uses a GPT model to clean and enhance the user input before sending it to Eleven Labs.
 - **Voice ID Matching**: A custom Langchain agent is used to match the voice ID description with the user prompt. This ensures that the voice used for the speech output is the best match for the input prompt.
 - **Eleven Labs Integration**: The application uses the Eleven Labs API to convert the cleaned and matched prompt into speech.
 
