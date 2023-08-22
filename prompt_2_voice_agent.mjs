@@ -31,6 +31,7 @@ async function getBestMatchVoiceId(inputPrompt, chatModel) {
   });
 
   const data = await response.json();
+  //console.log('Response from /voices API:', data); 
   let bestMatchVoiceId = null;
   let highestScore = -Infinity;
   let oper_obj = {};
