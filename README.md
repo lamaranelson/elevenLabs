@@ -1,16 +1,12 @@
 # Voice Modality with Eleven Labs
 
-This is a voice generation script powered by the Eleven Labs API. It takes user input and transforms it into speech using a two-step process. First, the user input is cleaned using a GPT model. Then, the cleaned prompt is sent to Eleven Labs.
+This is a voice generation script powered by the Eleven Labs API. It takes user input and transforms it into speech using a multi-step process. First, the user input is cleaned using a GPT model. Then, the cleaned prompt is sent to Eleven Labs to `GET` the `voiceid` that is necessary in the `POST` request to get the voice. We use the model to match the voice id parameters with user input.
 
 ## Features
 
 - **GPT Cleaning**: The script uses a GPT model to clean and enhance the user input before sending it to Eleven Labs.
-- **Voice ID Matching**: A custom Langchain agent is used to match the voice ID description with the user prompt. This ensures that the voice used for the speech output is the best match for the input prompt.
+- **Voice ID Matching**: The model is also used later on to match the voice ID description with the user prompt. This ensures that the voice used for the speech output is the best match for the input prompt.
 - **Eleven Labs Integration**: The application uses the Eleven Labs API to convert the cleaned and matched prompt into speech.
-
-## How it Works
-
-For text to voice generation Eleven Labs requires two API calls. The first is a GET request to retrieve the voice ID. The second is a POST request to get the actual voice. The voice used in the POST request must include the voice ID, which is matched to the user prompt using the Langchain agent.
 
 ## Setup
 
